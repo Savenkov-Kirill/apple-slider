@@ -1,17 +1,21 @@
-import "./style.css";
 import slides from "./slides";
+import "./style.css";
+
+const SlideItem = ({data}) => {
+    return (
+        <li className="slide-list__item">
+            <button className="button">{data.title}</button>
+        </li>
+    )
+}
 
 const Slider = () => {
-    console.log(slides);
-
     return (<div className="slider">
         <div className="controls">
             <ul className="slide-list">
-                <li className="slide-list__item">Colors</li>
-                <li className="slide-list__item">Aluminum unibody</li>
+                {slides.map((slide, index)=> <SlideItem data={slide} key={index} />)}
             </ul>
         </div>
-        <h1>Slider</h1>
     </div>);
 }
 
