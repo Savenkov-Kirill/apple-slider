@@ -22,3 +22,7 @@
 .button:hover {
     background-color: rgb(48, 48, 51);
 }
+
+.plus-icon {
+    --app-pv-icon-fill: #ffffff;
+}
