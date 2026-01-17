@@ -1,28 +1,45 @@
 .slider {
-    background-color: #000;
-    padding: 200px 0;
+	height: 600px;
+	background-color: #000;
+	border-radius: 28px;
+}
 
-    border-radius: 28px;
+.controls {
+	padding-left: 60px;
+	height: 100%;
 }
 
 .slide-list {
-    display: grid;
-    gap: 12px;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	justify-content: center;
 }
 
 .button {
-    padding: 0 32px 0 14px;
-    height: 56px;
-    background-color: rgb(30, 30, 32);
-    border-radius: 80px;
-    font-size: 16px;
-    font-weight: 600;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+
+	padding: 14px 32px 14px 14px;
+	background-color: rgb(30, 30, 32);
+	border-radius: 80px;
+	font-size: 17px;
+	font-weight: 600;
+
+	
 }
 
 .button:hover {
-    background-color: rgb(48, 48, 51);
+	background-color: rgb(48, 48, 51);
 }
 
 .plus-icon {
-    --app-pv-icon-fill: #ffffff;
+	--app-pv-icon-fill: #ffffff;
+}
+
+.button__icon {
+	margin-right: 10px;
+	vertical-align: middle;
 }
