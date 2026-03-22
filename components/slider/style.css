@@ -18,15 +18,17 @@
 }
 
 .button {
+	max-width: 374px;
 	display: flex;
 	align-items: center;
 	gap: 10px;
 
 	padding: 14px 32px 14px 14px;
 	background-color: rgb(30, 30, 32);
-	border-radius: 80px;
+	border-radius: 26px;
 	font-size: 17px;
-	font-weight: 600;
+	font-weight: 400;
+	text-align: left;
 
 	
 }
@@ -42,4 +44,9 @@
 .button__icon {
 	margin-right: 10px;
 	vertical-align: middle;
+}
+
+.button__text {
+	font-weight: 400;
+	text-align: left;
 }

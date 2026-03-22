@@ -8,14 +8,14 @@ import IconPlus from './icons/IconPlus.jsx';
 const SlideItem = ({ data, handler }) => {
 	return (
 		<li className="slide-list__item">
-			<button onClick={handler} className="button">
+			<button onClick={() => handler(data.id)} className="button">
 				{data.isActive ? (
-					<>
-						{data.title} {data.desc}
-					</>
+					<span className='button__text'>
+						<strong>{data.title}.</strong> {data.desc}
+					</span>
 				) : (
 					<>
-						<IconPlus /> {data.title}
+						<IconPlus /> <strong>{data.title}</strong>
 					</>
 				)}
 			</button>
@@ -26,15 +26,31 @@ const SlideItem = ({ data, handler }) => {
 const Slider = () => {
 	const [slides, setSlides] = useState(slidesData);
 
-	const clickHandler = () => {
-		console.log('Click!');
+	const clickHandler = (id) => {
+		console.log('Click!', id);
+
+		setSlides((prev)=> {
+			return prev.map((slide)=> {
+				let isActive = false;
+
+				if (slide.id === id) {
+					isActive = true
+				}
+
+				return {
+					...slide,
+					isActive: isActive,
+				};
+			})
+		});
+
 	};
 
 	return (
 		<div className="slider">
 			<div className="controls">
 				<ul className="slide-list">
-					{slidesData.map((slide, index) => (
+					{slides.map((slide, index) => (
 						<SlideItem
 							data={slide}
 							handler={clickHandler}
